@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warner Bros. Movies</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .masonry {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+        .filterDiv {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+             body {
+                background-image: url('images/Logo.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+             }
+</head>
+<body class="movies-page">
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <h1>Warner Bros. Movies</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="movies.html">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="tv-shows.html">TV Shows</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="games-apps.html">Games & Apps</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="collections.html">Collections</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container my-5">
+        <div class="controls mb-4">
+            <button class="btn btn-primary" onclick="filterSelection('all')">Show All</button>
+            <button class="btn btn-secondary" onclick="filterSelection('action')">Action</button>
+            <button class="btn btn-secondary" onclick="filterSelection('drama')">Drama</button>
+            <button class="btn btn-secondary" onclick="filterSelection('comedy')">Comedy</button>
+        </div>
+        <div class="masonry row">
+            <div class="filterDiv action col-md-6 col-lg-4 mb-4 show">
+                <div class="card">
+                    <img src="images/DP.jpg" class="card-img-top" alt="Dune Prophecy">
+                    <div class="card-body">
+                        <h2 class="card-title">Dune Prophecy</h2>
+                        <p class="card-text">Two Harkonnen sisters as they combat forces that threaten the future of humankind and establish the fabled sect.</p>
+                        <p class="card-text">Release Date: March 4, 2022</p>
+                        <p class="card-text">Director: Matt Reev</p>
+                        <div class="embed-responsive embed-responsive-16by9 mb-4">
+                            <video class="embed-responsive-item" controls>
+                                <source src="Trailers/Dune_ Prophecy _ Official Teaser _ Max.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Additional movies -->
+            <div class="filterDiv drama col-md-6 col-lg-4 mb-4 show">
+                <div class="card">
+                    <img src="images/rip.jpg" class="card-img-top" alt="Ripley">
+                    <div class="card-body">
+                        <h2 class="card-title">Ripley</h2>
+                        <p class="card-text">An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.</p>
+                        <p class="card-text">Release Date: October 6, 2006</p>
+                        <p class="card-text">Director: Martin Scorsese</p>
+                        <div class="embed-responsive embed-responsive-16by9 mb-4">
+                            <video class="embed-responsive-item" controls>
+                                <source src="Trailers/Ripley _ Official Trailer _ Netflix.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv comedy col-md-6 col-lg-4 mb-4 show">
+                <div class="card">
+                    <img src="images/bbfl.jpg" class="card-img-top" alt="Bad Boys">
+                    <div class="card-body">
+                        <h2 class="card-title">Bad Boys 4L</h2>
+                        <p class="card-text">Detectives Mike Lowrey and Marcus Burnett join the Miami Police Department's special team AMMO to bring down the ruthless Armando, who is on a mission to kill Mike at his mother Isabel's orders.</p>
+                        <div class="embed-responsive embed-responsive-16by9 mb-4">
+                            <video class="embed-responsive-item" controls>
+                                <source src="Trailers/bad boys.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 Warner Bros. Entertainment Inc.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function filterSelection(category) {
+            const elements = document.getElementsByClassName('filterDiv');
+            if (category === 'all') category = '';
+            Array.from(elements).forEach(element => {
+                element.classList.remove('show');
+                if (element.className.indexOf(category) > -1) element.classList.add('show');
+            });
+        }
+        filterSelection('all'); // Show all movies on initial load
+    </script>
+</body>
+</html>

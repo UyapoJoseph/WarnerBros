@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warner Bros. Games & Apps</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .masonry {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .filterDiv {
+            display: none;
+        }
+        .filterDiv.show {
+            display: block;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="games-apps-page">
+    <header class="bg-dark text-white p-3">
+        <div class="container">
+            <h1>Warner Bros. Games & Apps</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="movies.html">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="tv-shows.html">TV Shows</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="games-apps.html">Games & Apps</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="collections.html">Collections</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container my-5">
+        <h2>Featured Game: Hogwarts Legacy</h2>
+        <div class="card mb-4">
+            <img src="images/hog.jpg" class="card-img-top img-thumbnail" alt="Hogwarts Legacy">
+            <div class="card-body">
+                <p>Experience Hogwarts in the 1800s. Your character is a student who holds the key to an ancient secret that threatens to tear the wizarding world apart.</p>
+                <p>Release Date: February 10, 2023</p>
+                <p>Platform: PC, PS5, Xbox Series X</p>
+                <div class="embed-responsive embed-responsive-16by9 mb-4">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1O6Qstncpnc" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 Warner Bros. Entertainment Inc.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
